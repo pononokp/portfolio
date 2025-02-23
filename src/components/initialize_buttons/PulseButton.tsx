@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { SparklesCore } from '../sparkles';
+// import { SparklesCore } from '../sparkles';
 import { Typewriter } from 'react-simple-typewriter';
 interface PulseButtonProps {
     isBgActive: boolean;
@@ -19,42 +19,24 @@ const PulseButton: React.FC<PulseButtonProps> = ({
     const handleClick = () => {
         setBgActive(true);
         setIsEntrance(false);
-        const timer = setTimeout(() => {
-            setShowButton(false);
-        }, 500); // Delay of 500 milliseconds (0.5 seconds)
-
-        // Cleanup function to clear the timer if the component unmounts
-        return () => clearTimeout(timer);
+        setShowButton(false);
     };
 
     return (
-        <div className="relative flex items-center justify-center h-screen overflow-hidden">
+        <div className="fixed top-0 left-0 w-full flex items-center justify-center h-screen overflow-hidden">
             <motion.div
-                className="absolute inset-0 bg-black"
-                initial={{
-                    scale: 0,
-                    borderRadius: '50%',
-                }} // Start with a rounded shape
+                className="fixed inset-0 bg-white z-30"
+                initial={{ clipPath: 'circle(150% at center)' }} // Starts covering the whole screen
                 animate={{
-                    scale: isBgActive ? 1 : 0,
-                    borderRadius: isBgActive ? '0%' : '50%',
-                }} // Transition to fill the screen
+                    clipPath: isBgActive
+                        ? 'circle(0% at center)' // Shrinks to the middle (disappear)
+                        : 'circle(150% at center)', // Expands from the middle outward (appear)
+                }}
                 transition={{ duration: 1, ease: 'easeInOut' }}
-            >
-                <SparklesCore
-                    id="tsparticlesfullpage"
-                    background="transparent"
-                    speed={1.5}
-                    minSize={0.5}
-                    maxSize={1}
-                    particleDensity={25}
-                    className="w-full h-full"
-                    particleColor="#FFFFFF"
-                />
-            </motion.div>
+            />
 
             {showButton && (
-                <div className="flex flex-col items-center justify-center gap-10">
+                <div className="flex flex-col items-center justify-center gap-10 z-50">
                     <span className="font-sans text-black text-6xl">
                         <Typewriter
                             words={['WELCOME']}
@@ -67,7 +49,7 @@ const PulseButton: React.FC<PulseButtonProps> = ({
                     </span>
                     <motion.button
                         onClick={handleClick}
-                        className="relative z-10 w-16 h-16 rounded-full bg-black text-white flex items-center justify-center cursor-pointer transition-transform duration-300 ease-in-out"
+                        className="relative w-16 h-16 rounded-full bg-black text-white flex items-center justify-center cursor-pointer transition-transform duration-300 ease-in-out"
                         animate={{
                             scale: [1, 3, 1],
                         }}

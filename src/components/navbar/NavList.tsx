@@ -30,7 +30,7 @@ const NavList: React.FC<NavListProps> = ({
             className={`flex ${
                 isMenuOpen
                     ? 'flex-col gap-8 items-center font-sans text-primary'
-                    : 'fixed left-0 top-1/4 transform -translate-x-20 -rotate-90 gap-4 flex-row text-primary font-sans'
+                    : 'fixed left-0 top-1/4 transform -translate-x-20 -rotate-90 gap-4 flex-row-reverse text-primary font-sans'
             } ${className}$`}
         >
             {navLinks.map(({ label, section, delay }) => {

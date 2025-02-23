@@ -30,7 +30,11 @@ const Nav: React.FC<NavProps> = ({ isEntrance = false }) => {
 
     return (
         <>
-            <header className="fixed top-0 left-0 w-full p-4 sm:p-6 lg:p-8 h-nav z-50">
+            <header
+                className={`fixed top-0 left-0 w-full p-4 sm:p-6 lg:p-8 h-nav z-50 ${
+                    isMenuOpen ? 'bg-black' : ''
+                }`}
+            >
                 <div className="flex w-full justify-between items-center h-[43px]">
                     <Link
                         to="intro"
@@ -63,7 +67,7 @@ const Nav: React.FC<NavProps> = ({ isEntrance = false }) => {
                     </div>
                 </div>
                 <div
-                    className={`flex flex-col gap-8 md:hidden fixed inset-0 top-[56px]  z-50 transition-all duration-300 ease-in-out px-4 py-8  backdrop-blur-md${
+                    className={`flex flex-col gap-8 md:hidden fixed inset-0 top-[56px]  z-50 transition-all duration-300 ease-in-out px-4 py-8 bg-black ${
                         isMenuOpen
                             ? 'opacity-100 translate-x-0'
                             : 'opacity-0 translate-x-full pointer-events-none'
@@ -103,15 +107,16 @@ const Nav: React.FC<NavProps> = ({ isEntrance = false }) => {
                 offset={-107}
                 isDynamic
                 activeClass="text-accent after:scale-x-100"
-                className={`z-50 bg-gray-700 rounded-full shadow-md fixed bottom-8 right-8 p-3 hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out ${
+                className={`z-50 fixed bottom-8 right-8 p-3 hover:text-accent hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out ${
                     showBackToTop
                         ? 'opacity-80'
                         : 'opacity-0 pointer-events-none'
                 }`}
             >
                 <ChevronUp
-                    size={32}
-                    color={'var(--color-accent)'}
+                    size={60}
+                    strokeWidth={0.7}
+                    className={`hover:text-accent transition-all duration-300 ease-in-out`}
                 />
             </Link>
         </>
