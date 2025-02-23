@@ -63,7 +63,7 @@ const Nav: React.FC<NavProps> = ({ isEntrance = false }) => {
                     </div>
                 </div>
                 <div
-                    className={`flex flex-col gap-8 md:hidden fixed inset-0 top-[56px]  z-50 transition-all duration-300 ease-in-out px-4 py-8 backdrop-filter backdrop-blur-md ${
+                    className={`flex flex-col gap-8 md:hidden fixed inset-0 top-[56px]  z-50 transition-all duration-300 ease-in-out px-4 py-8  backdrop-blur-md${
                         isMenuOpen
                             ? 'opacity-100 translate-x-0'
                             : 'opacity-0 translate-x-full pointer-events-none'
@@ -83,7 +83,7 @@ const Nav: React.FC<NavProps> = ({ isEntrance = false }) => {
                 </div>
             </header>
 
-            <div className="hidden md:flex fixed left-0 top-0 h-full m-0 p-0">
+            <div className="hidden md:flex fixed left-0 top-0 h-full m-0 p-0 z-50">
                 <NavList
                     isMenuOpen={isMenuOpen}
                     setIsMenuOpen={setIsMenuOpen}
