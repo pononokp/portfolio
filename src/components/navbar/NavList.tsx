@@ -75,7 +75,7 @@ const NavList: React.FC<NavListProps> = ({
                         rel="noopener noreferrer"
                         className="cursor-pointer hover:text-accent transition-all duration-300 ease-in-out"
                     >
-                        {'<resume/>'}
+                        {'<resume />'}
                     </a>
                 )}
             </li>

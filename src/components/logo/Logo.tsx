@@ -1,12 +1,11 @@
 import clsx from 'clsx';
 
-const Logo = ({ isEntrance = false, className = '', ...props }) => (
+const Logo = ({ fontSize = '12', className = '', ...props }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 36 16"
         className={clsx(
-            'font-serif hover:text-accent transition-all duration-300 ease-in-out',
-            isEntrance ? 'text-black' : 'text-primary',
+            'font-serif transition-all duration-300 ease-in-out',
             className
         )}
         {...props}
@@ -16,7 +15,7 @@ const Logo = ({ isEntrance = false, className = '', ...props }) => (
             x="0"
             y="12"
             fill="currentColor"
-            fontSize="12"
+            fontSize={fontSize}
             fontWeight="bold"
         >
             PO

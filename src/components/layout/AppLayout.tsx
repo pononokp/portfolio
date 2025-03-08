@@ -1,50 +1,41 @@
 import Nav from '../navbar';
-import { PulseButton } from '../initialize_buttons';
-import { PowerButton } from '../initialize_buttons';
-import { useState } from 'react';
-import { SparklesCore } from '../sparkles';
+import { Start, Exit } from '../start_end_transitions';
+import { useState, useEffect } from 'react';
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
-    const [isEntrance, setIsEntrance] = useState(true);
-    const [isBgActive, setBgActive] = useState(false);
-    const [showButton, setShowButton] = useState(true);
+    const [start, setStart] = useState(false);
+    const [exit, setExit] = useState(false);
+    const [disappear, setDisappear] = useState(false);
+
+    useEffect(() => {
+        if (!disappear) {
+            const timeout = setTimeout(() => {
+                setStart(true);
+            }, 2200);
+
+            return () => clearTimeout(timeout);
+        }
+    }, [disappear]);
 
     return (
-        <div className="relative w-full bg-black overflow-x-hidden justify-center items-center">
-            {/* Fixed Background */}
-            <SparklesCore
-                id="tsparticlesfullpage"
-                background="transparent"
-                speed={1.5}
-                minSize={0.5}
-                maxSize={1}
-                particleDensity={35}
-                className="fixed top-0 left-0 w-full h-full z-0"
-                particleColor="#FFFFFF"
-            />
-
+        <div className="min-h-svh overflow-x-hidden">
             {/* Scrollable Content */}
-            {isBgActive && (
-                <main className="relative justify-center items-center flex flex-col min-h-screen p-0 mx-20">
+            {start && (
+                <main className="relative justify-center items-center flex flex-col p-0 mx-20">
                     {children}
                 </main>
             )}
 
             {/* Navbar and Buttons */}
-            <Nav isEntrance={isEntrance} />
-            <PulseButton
-                isBgActive={isBgActive}
-                setBgActive={setBgActive}
-                setIsEntrance={setIsEntrance}
-                showButton={showButton}
-                setShowButton={setShowButton}
+            <Nav
+                setExit={setExit}
+                setDisappear={setDisappear}
+                setStart={setStart}
             />
-            <PowerButton
-                isBgActive={isBgActive}
-                setBgActive={setBgActive}
-                setIsEntrance={setIsEntrance}
-                setShowButton={setShowButton}
-            />
+
+            {/* Initialize Buttons */}
+            {!disappear && <Start setDisappear={setDisappear} />}
+            {exit && <Exit setExit={setExit} />}
         </div>
     );
 };

@@ -9,10 +9,12 @@ import NavList from './NavList';
 import SocialList from './SocialList';
 
 interface NavProps {
-    isEntrance?: boolean;
+    setExit: (value: boolean) => void;
+    setDisappear: (value: boolean) => void;
+    setStart: (value: boolean) => void;
 }
 
-const Nav: React.FC<NavProps> = ({ isEntrance = false }) => {
+const Nav = ({ setExit, setDisappear, setStart }: NavProps) => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [showBackToTop, setBackToTop] = useState(false);
 
@@ -23,6 +25,15 @@ const Nav: React.FC<NavProps> = ({ isEntrance = false }) => {
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const handleClick = () => {
+        setExit(true);
+        const timeout = setTimeout(() => {
+            setDisappear(false);
+            setStart(false);
+        }, 500);
+        return () => clearTimeout(timeout);
+    };
 
     useEffect(() => {
         document.body.style.overflow = isMenuOpen ? 'hidden' : 'unset';
@@ -36,20 +47,12 @@ const Nav: React.FC<NavProps> = ({ isEntrance = false }) => {
                 }`}
             >
                 <div className="flex w-full justify-between items-center h-[43px]">
-                    <Link
-                        to="intro"
-                        spy
-                        smooth
-                        duration={700}
-                        offset={-107}
-                        isDynamic
-                        activeClass="text-accent after:scale-x-100"
+                    <button
+                        onClick={() => handleClick()}
+                        className="bg-transparent"
                     >
-                        <Logo
-                            className="w-20 md:w-24 cursor-pointer"
-                            isEntrance={isEntrance}
-                        />
-                    </Link>
+                        <Logo className="w-20 md:w-24 cursor-pointer text-primary  hover:text-accent transition-all duration-300 ease-in-out" />
+                    </button>
                     <div>
                         <a
                             href={resume}
@@ -57,7 +60,7 @@ const Nav: React.FC<NavProps> = ({ isEntrance = false }) => {
                             rel="noopener noreferrer"
                             className="text-primary hidden md:block cursor-pointer hover:text-accent transition-all duration-300 ease-in-out"
                         >
-                            {'<resume/>'}
+                            {'<resume />'}
                         </a>
                         <MenuButton
                             setIsMenuOpen={setIsMenuOpen}
@@ -104,19 +107,18 @@ const Nav: React.FC<NavProps> = ({ isEntrance = false }) => {
                 spy
                 smooth
                 duration={700}
-                offset={-107}
+                offset={-100}
                 isDynamic
-                activeClass="text-accent after:scale-x-100"
-                className={`z-50 fixed bottom-8 right-8 p-3 hover:text-accent hover:cursor-pointer hover:scale-105 transition-all duration-300 ease-in-out ${
+                activeClass="text-primary"
+                className={`text-primary z-50 fixed bottom-8 right-8 p-3 hover:scale-105 hover:text-accent hover:cursor-pointer transition-all duration-300 ease-in-out ${
                     showBackToTop
-                        ? 'opacity-80'
+                        ? 'opacity-100'
                         : 'opacity-0 pointer-events-none'
                 }`}
             >
                 <ChevronUp
                     size={60}
                     strokeWidth={0.7}
-                    className={`hover:text-accent transition-all duration-300 ease-in-out`}
                 />
             </Link>
         </>
