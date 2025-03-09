@@ -3,6 +3,7 @@ import { Link } from 'react-scroll';
 import Typewriter from 'typewriter-effect';
 import { motion } from 'framer-motion';
 import profile from '@assets/profile.png';
+import networkAccent from '@assets/network-accent.png';
 import { ChevronDown } from 'lucide-react';
 
 const Intro = () => {
@@ -33,6 +34,7 @@ const Intro = () => {
             <div className="container items-center justify-center flex flex-col lg:flex-row gap-10">
                 <div className="flex flex-col gap-4">
                     <motion.div
+                        className="mt-40"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{
                             opacity: 1,
@@ -92,7 +94,7 @@ const Intro = () => {
                         </motion.div>
                     </div>
                     <motion.p
-                        className="md:w-3/4 text-primary font-sans text-sm"
+                        className="min-w-[300px] text-primary font-sans text-sm sm:text- max-w-3xl"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{
                             opacity: 1,
@@ -100,9 +102,14 @@ const Intro = () => {
                         }}
                         transition={{ duration: 0.5, delay: 0.3 }}
                     >
-                        A fifth-year software engineering student with a strong
-                        passion for problem solving, software, and its latest
-                        advancements.
+                        A fifth-year software engineering student passionate
+                        about software creation, innovation, and game
+                        development. With a strong focus on problem-solving, I
+                        work with modern tech stacks like ReactJS, Node.js, and
+                        various cloud services to build impactful,
+                        high-performance tools. I bring creativity and attention
+                        to detail to every project, ensuring seamless, engaging
+                        user experiences.
                     </motion.p>
                 </div>
                 <motion.div
@@ -114,17 +121,26 @@ const Intro = () => {
                     }}
                     transition={{ duration: 0.5, delay: 0.7 }}
                 >
-                    <div className="relative w-80 h-80 rounded-full overflow-hidden">
-                        <img
-                            src={profile}
-                            alt=""
-                            className="w-full h-full object-cover"
-                        />
+                    <div className="relative mb-10">
+                        <div className="absolute hidden lg:block w-80 h-80 rounded-full overflow-visible top-[-100px] right-[-100px] z-0">
+                            <img
+                                src={networkAccent}
+                                alt=""
+                                className="w-full h-full max-w-sm lg:max-w-lg object-cover"
+                            />
+                        </div>
+                        <div className="relative max-w-80 max-h-80 rounded-full overflow-hidden z-10">
+                            <img
+                                src={profile}
+                                alt=""
+                                className="w-full max-w-sm lg:max-w-lg object-cover"
+                            />
+                        </div>
                     </div>
                 </motion.div>
             </div>
             <motion.div
-                className="absolute flex justify-center bottom-10 items-center w-full z-20 text-primary"
+                className="absolute flex justify-center bottom-5 items-center w-full z-20 text-primary"
                 initial={{ y: 0, opacity: 1 }}
                 animate={{
                     y: isScrolled ? 20 : 0,

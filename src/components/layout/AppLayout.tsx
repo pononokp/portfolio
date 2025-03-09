@@ -1,6 +1,7 @@
 import Nav from '../navbar';
 import { Start, Exit } from '../start_end_transitions';
 import { useState, useEffect } from 'react';
+import { Footer } from '../footer';
 
 const AppLayout = ({ children }: { children: React.ReactNode }) => {
     const [start, setStart] = useState(false);
@@ -11,7 +12,7 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
         if (!disappear) {
             const timeout = setTimeout(() => {
                 setStart(true);
-            }, 2200);
+            }, 2500);
 
             return () => clearTimeout(timeout);
         }
@@ -21,9 +22,14 @@ const AppLayout = ({ children }: { children: React.ReactNode }) => {
         <div className="min-h-svh overflow-x-hidden">
             {/* Scrollable Content */}
             {start && (
-                <main className="relative justify-center items-center flex flex-col p-0 mx-20">
-                    {children}
-                </main>
+                <div className="relative justify-center items-center flex flex-col p-0 mx-20">
+                    <main className="relative justify-center items-center flex flex-col p-0 mx-20">
+                        {children}
+                    </main>
+                    <div className="container flex flex-col items-center justify-center">
+                        <Footer />
+                    </div>
+                </div>
             )}
 
             {/* Navbar and Buttons */}

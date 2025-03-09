@@ -1,20 +1,20 @@
 import { motion } from 'framer-motion';
-import projectPhoto from '@assets/project-one.png';
+import projectPhoto from '@assets/project-three.png';
 import divider from '@assets/divider.svg';
-import { LuExternalLink } from 'react-icons/lu';
 
-const ProjectOne = () => {
-    const adrlTech = [
-        'Python',
-        'PySide6',
-        'Qt',
-        'Plotly',
-        'Pandas',
-        'Numpy',
-        'Scikit-learn',
-        'Github',
+const ProjectThree = () => {
+    const fun2lTech = [
+        'ReactJS',
+        'JavaScript',
+        'SQL',
+        'Node.js',
+        'Azure',
+        'CSS',
+        'REST',
+        'Docker',
+        'Firebase',
     ];
-    const adrlTechBadges = adrlTech.map((technology, i) => {
+    const fun2lTechBadges = fun2lTech.map((technology, i) => {
         return (
             <div
                 role="button"
@@ -37,7 +37,7 @@ const ProjectOne = () => {
             >
                 <img
                     src={projectPhoto}
-                    alt="Simumat"
+                    alt="Fun2Learn"
                     className="w-full max-w-sm lg:max-w-3xl"
                 />
             </motion.div>
@@ -61,16 +61,10 @@ const ProjectOne = () => {
                         alt="Divider"
                         className="relative w-auto h-4 text-accent"
                     />
-                    <span className="text-lg font-bold text-accent">01</span>
-                    <a
-                        href="https://youtu.be/a8MHwczzAkA"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary flex items-center gap-2 hover:text-accent font-sans hover:cursor-pointer transition-all duration-300 ease-in-out"
-                    >
-                        <LuExternalLink size={20} />
-                        <span>DEMO</span>
-                    </a>
+                    <span className="text-lg font-bold text-accent">03</span>
+                    <span className="text-primary font-sans">
+                        IN DEVELOPMENT
+                    </span>
                 </motion.div>
                 <motion.div
                     className="text-primary font-sans flex flex-col max-w-lg gap-5"
@@ -80,32 +74,21 @@ const ProjectOne = () => {
                     transition={{ duration: 0.8 }}
                 >
                     <h1 className="text-4xl max-1210:text-3xl max-md:text-2xl font-bold">
-                        Improving efficiency of research in alloy design
+                        Making Time Management Fun for Students
                     </h1>
                     <p className="text-md max-1210:text-md max-md:text-xs">
-                        Simu-Mat, developed in collaboration with the UNB Alloy
-                        Design Research Laboratory&nbsp;
-                        <a
-                            href="https://admtrl.com/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-accent cursor-pointer relative group"
-                        >
-                            (ADRL)
-                            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-accent transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"></span>
-                        </a>
-                        , is a powerful tool that helps researchers and
-                        engineers test and compare different material
-                        constitutive models, including those powered by machine
-                        learning. It predicts mechanical properties and stress
-                        distributions in alloys, offering valuable insights for
-                        alloy design and material testing. By combining
-                        computational and AI methods, SimuMat makes data-driven
-                        decisions easier for both academic and industrial
-                        applications.
+                        Fun2Learn is a gamified time management system designed
+                        to help students stay on top of their tasks while making
+                        the process more enjoyable. By turning time management
+                        into a fun and interactive experience, the app
+                        encourages students to stay organized and motivated.
+                        With personalized positive reinforcement messages and a
+                        user-friendly interface, Fun2Learn makes it easier to
+                        manage deadlines, reduce stress, and boost overall
+                        productivity.
                     </p>
                     <div className="flex flex-wrap gap-2 mt-2">
-                        {adrlTechBadges}
+                        {fun2lTechBadges}
                     </div>
                 </motion.div>
             </div>
@@ -113,4 +96,4 @@ const ProjectOne = () => {
     );
 };
 
-export default ProjectOne;
+export default ProjectThree;

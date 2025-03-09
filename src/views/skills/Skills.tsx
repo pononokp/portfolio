@@ -11,8 +11,8 @@ const Skills = () => {
                 className="container flex flex-col items-center justify-center"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: true, amount: 0.1 }}
-                transition={{ duration: 0.5 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.8 }}
             >
                 <h1 className="text-4xl max-980:text-3xl font-bold text-primary font-sans justify-center mb-10">
                     SKILLS

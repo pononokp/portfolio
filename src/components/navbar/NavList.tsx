@@ -1,5 +1,6 @@
 import { Link } from 'react-scroll';
 import resume from '@assets/resume.pdf';
+import { useState } from 'react';
 
 interface NavListProps {
     isMobile?: boolean;
@@ -14,6 +15,8 @@ const NavList: React.FC<NavListProps> = ({
     setIsMenuOpen,
     className = '',
 }) => {
+    const [activeSection, setActiveSection] = useState<string | null>(null);
+
     const navLinks = [
         { label: 'SKILLS', section: 'skills', delay: 'delay-0' },
         { label: 'PROJECTS', section: 'projects', delay: 'delay-100' },
@@ -43,13 +46,17 @@ const NavList: React.FC<NavListProps> = ({
                     >
                         <Link
                             to={section}
-                            spy
+                            spy={true}
                             smooth
                             duration={700}
-                            isDynamic
-                            activeClass="text-accent after:scale-x-100"
-                            className="cursor-pointer hover:text-accent transition-all duration-300 ease-in-out relative after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:origin-left after:scale-x-0 after:bg-accent after:transition-transform hover:after:scale-x-100 after:duration-500"
-                            {...({ activeAtBottom: 'contact' } as any)}
+                            isDynamic={true}
+                            offset={label === 'CONTACT' ? -210 : 50}
+                            onSetActive={() => setActiveSection(section)} // Add active section
+                            className={`cursor-pointer hover:text-accent transition-all duration-300 ease-in-out relative after:absolute after:bottom-0 after:left-0 after:h-[3px] after:w-full after:origin-left after:scale-x-0 after:bg-accent after:transition-transform hover:after:scale-x-100 after:duration-500 ${
+                                activeSection === section
+                                    ? 'text-accent after:scale-x-100'
+                                    : ''
+                            }`}
                             onClick={() => setIsMenuOpen(false)}
                         >
                             {label}

@@ -50,13 +50,15 @@ const Timeline = () => {
         'GitHub',
         'Jira',
         'Confluence',
+        'Git',
+        'Agile',
     ];
 
     const adrlTechBadges = adrlTech.map((technology, i) => {
         return (
             <div
                 role="button"
-                className="bg-secondary text-black px-2 py-1 rounded-full"
+                className="bg-accent text-black px-2 py-1 rounded-full"
                 tabIndex={i}
             >
                 <span className="text-sm">{technology}</span>
@@ -68,7 +70,7 @@ const Timeline = () => {
         return (
             <div
                 role="button"
-                className="bg-secondary text-black px-2 py-1 rounded-full"
+                className="bg-accent text-black px-2 py-1 rounded-full"
                 tabIndex={i}
             >
                 <span className="text-sm">{technology}</span>

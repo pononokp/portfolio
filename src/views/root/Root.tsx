@@ -1,15 +1,11 @@
-// import { ErrorBoundary } from 'react-error-boundary';
-// import GenericError from '@components/GenericError';
+import { ErrorBoundary } from 'react-error-boundary';
+import GenericError from '../../components/generic-error';
 import AppLayout from '../../components/layout';
-// import About from '@views/About';
-// import Contact from '@views/Contact';
-// import Home from '@views/Home';
-// import Projects from '@views/Projects';
-// import Work from '@views/Work';
 import Intro from '../intro';
 import { SparklesCore } from '../../components/sparkles';
 import Skills from '../skills';
-import Projects from '../projects';
+import { Projects } from '../projects';
+import { Contact } from '../contact';
 
 const Root = () => (
     <div className="bg-black">
@@ -23,11 +19,17 @@ const Root = () => (
             className="fixed top-0 left-0 w-full h-full z-0"
             particleColor="#FFFFFF"
         />
-        <AppLayout>
-            <Intro />
-            <Skills />
-            <Projects />
-        </AppLayout>
+        <ErrorBoundary
+            FallbackComponent={GenericError}
+            onReset={() => window.location.reload()}
+        >
+            <AppLayout>
+                <Intro />
+                <Skills />
+                <Projects />
+                <Contact />
+            </AppLayout>
+        </ErrorBoundary>
     </div>
 );
 

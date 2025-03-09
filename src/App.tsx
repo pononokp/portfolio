@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import NotFound from '@views/NotFound';
+import NotFound from './views/not-found';
 import Root from './views/root';
 
 const App = () => (
@@ -9,10 +9,10 @@ const App = () => (
                 path="/"
                 element={<Root />}
             />
-            {/* <Route
+            <Route
                 path="*"
                 element={<NotFound />}
-            /> */}
+            />
         </Routes>
     </BrowserRouter>
 );

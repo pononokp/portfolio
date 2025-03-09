@@ -11,7 +11,7 @@ const Start = ({
     useEffect(() => {
         const timeout = setTimeout(() => {
             setDisappear(true);
-        }, 3100);
+        }, 3500);
         return () => clearTimeout(timeout);
     }, []);
 
@@ -25,7 +25,7 @@ const Start = ({
                 animate={{
                     y: '-100vh',
                 }}
-                transition={{ duration: 1, ease: 'easeInOut', delay: 2 }}
+                transition={{ duration: 1.5, ease: 'easeInOut', delay: 2 }}
             >
                 <span className="font-sans text-black text-6xl h-16">
                     <Typewriter

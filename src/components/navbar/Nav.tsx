@@ -7,6 +7,7 @@ import { ChevronUp } from 'lucide-react';
 import MenuButton from './MenuButton';
 import NavList from './NavList';
 import SocialList from './SocialList';
+import { Footer } from '../footer';
 
 interface NavProps {
     setExit: (value: boolean) => void;
@@ -87,6 +88,9 @@ const Nav = ({ setExit, setDisappear, setStart }: NavProps) => {
                         isMenuOpen={isMenuOpen}
                         className="py-4"
                     />
+                    <div className="container flex flex-col items-center justify-center">
+                        <Footer />
+                    </div>
                 </div>
             </header>
 
