@@ -10,7 +10,7 @@ const App = () => (
                 element={<Root />}
             />
             <Route
-                path="*"
+                path="/404"
                 element={<NotFound />}
             />
         </Routes>
