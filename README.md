@@ -1,6 +1,6 @@
 # <p align="center">promiseono.vercel.app</p>
 
-<p align="center">![Image](https://github.com/user-attachments/assets/fd2ee3bb-74ca-4e8c-813a-eda7ab8c8521)</p>
+<p align="center"><img width="700" alt="image" src="https://github.com/user-attachments/assets/fd2ee3bb-74ca-4e8c-813a-eda7ab8c8521" /></p>
 <p align="center">Personal portfolio website built with React, Tailwind CSS, and Framer Motion. Bundled with Vite and deployed on Vercel.</p>
 <p align="center">
   <a href="https://github.com/pononokp/portfolio/releases/latest" target="_blank"><img alt="GitHub release" src="https://img.shields.io/github/release/pononokp/portfolio.svg?logo=github&color=red"></a>
