@@ -62,9 +62,7 @@ const ProjectThree = () => {
                         className="relative w-auto h-4 text-accent"
                     />
                     <span className="text-lg font-bold text-accent">03</span>
-                    <span className="text-primary font-sans">
-                        IN PROGRESS...
-                    </span>
+                    <span className="text-primary font-sans">IN PROGRESS</span>
                 </motion.div>
                 <motion.div
                     className="text-primary font-sans flex flex-col max-w-lg gap-5"

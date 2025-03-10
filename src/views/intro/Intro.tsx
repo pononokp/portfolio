@@ -108,8 +108,8 @@ const Intro = () => {
                         work with modern tech stacks like ReactJS, Node.js, and
                         various cloud services to build impactful,
                         high-performance tools. I bring creativity and attention
-                        to detail to every project, ensuring seamless, engaging
-                        user experiences.
+                        to detail in every project, ensuring seamless and
+                        engaging user experiences.
                     </motion.p>
                 </div>
                 <motion.div
