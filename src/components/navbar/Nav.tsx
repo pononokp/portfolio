@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-scroll';
-// import Footer from '@components/Footer'
 import Logo from '../logo';
-import resume from '@assets/resume.pdf';
+import resume from '@assets/Promise-Eskor-Resume.pdf';
 import { ChevronUp } from 'lucide-react';
 import MenuButton from './MenuButton';
 import NavList from './NavList';

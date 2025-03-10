@@ -1,5 +1,5 @@
 import { Link } from 'react-scroll';
-import resume from '@assets/resume.pdf';
+import resume from '@assets/Promise-Eskor-Resume.pdf';
 import { useState } from 'react';
 
 interface NavListProps {
