@@ -4,7 +4,6 @@
 <p align="center">Personal portfolio website built with React, Tailwind CSS, and Framer Motion. Bundled with Vite and deployed on Vercel.</p>
 <p align="center">
   <a href="https://github.com/pononokp/portfolio/releases/latest" target="_blank"><img alt="GitHub release" src="https://img.shields.io/github/release/pononokp/portfolio.svg?logo=github&color=red"></a>
-    <a href="https://github.com/pononokp/portfolio/actions?workflow=jobs" target="_blank"><img alt="Workflow" src="https://img.shields.io/github/actions/workflow/status/pononokp/portfolio/.github%2Fworkflows%2Fjobs.yml?&logo=github"></a>
 </p>
 
 ## 🧭 Table of Contents
