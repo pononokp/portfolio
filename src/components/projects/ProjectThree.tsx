@@ -63,7 +63,7 @@ const ProjectThree = () => {
                     />
                     <span className="text-lg font-bold text-accent">03</span>
                     <span className="text-primary font-sans">
-                        IN DEVELOPMENT
+                        IN PROGRESS...
                     </span>
                 </motion.div>
                 <motion.div
