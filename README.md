@@ -1,50 +1,75 @@
-# React + TypeScript + Vite
+# <p align="center">promiseono.vercel.app</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">![Image](https://github.com/user-attachments/assets/fd2ee3bb-74ca-4e8c-813a-eda7ab8c8521)</p>
+<p align="center">Personal portfolio website built with React, Tailwind CSS, and Framer Motion. Bundled with Vite and deployed on Vercel.</p>
+<p align="center">
+  <a href="https://github.com/pononokp/portfolio/releases/latest" target="_blank"><img alt="GitHub release" src="https://img.shields.io/github/release/pononokp/portfolio.svg?logo=github&color=red"></a>
+    <a href="https://github.com/pononokp/portfolio/actions?workflow=jobs" target="_blank"><img alt="Workflow" src="https://img.shields.io/github/actions/workflow/status/pononokp/portfolio/.github%2Fworkflows%2Fjobs.yml?&logo=github"></a>
+</p>
 
-Currently, two official plugins are available:
+## 🧭 Table of Contents
 
--   [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
--   [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- [promiseono.vercel.app](#promiseonovercelapp)
+  - [Table of Contents](#-table-of-contents)
+  - [Directory Structure](#%EF%B8%8F-directory-structure)
+  - [Local Run](#-local-run)
+    - [Tech Stack](#techstack)
+    - [Steps](#steps)
 
-## Expanding the ESLint configuration
+## 🏗️ Directory Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
--   Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-    languageOptions: {
-        // other options...
-        parserOptions: {
-            project: ['./tsconfig.node.json', './tsconfig.app.json'],
-            tsconfigRootDir: import.meta.dirname,
-        },
-    },
-});
+```bash
+src/
+├── assets/         # Static assets
+├── components/     # Shared React components
+    ├── example-component/     # Example related component folder
+        ├── example-component1.tsx     # Example component
+        ├── example-component2.tsx     # Example component
+        ├── index.tsx                 # export file for all components in folder
+    ├── styles/         # Custom styles and css files
+    ├── utils/          # Helper functions
+    ├── views/          # Sections in the main page
+    └── lib/            # Shared libraries
 ```
 
--   Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
--   Optionally add `...tseslint.configs.stylisticTypeChecked`
--   Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🚀 Local Run
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
+### Tech Stack
 
-export default tseslint.config({
-    // Set the react version
-    settings: { react: { version: '18.3' } },
-    plugins: {
-        // Add the react plugin
-        react,
-    },
-    rules: {
-        // other rules...
-        // Enable its recommended rules
-        ...react.configs.recommended.rules,
-        ...react.configs['jsx-runtime'].rules,
-    },
-});
+- **Frontend**: React (built with Vite)  in TS
+- **Deployment**: Vercel  
+- **Package Manager**: pnpm  
+- **Development Setup**: Static assets are bundled with Vite and served by Vercel.  
+
+
+### Steps
+
+1. Clone this repository
+
+```bash
+git clone https://github.com/pononokp/portfolio.git
+```
+
+2. Navigate into the project directory
+
+```bash
+cd portfolio
+```
+
+3. Install the dependencies
+
+```bash
+pnpm install
+```
+
+4. Run the development server
+
+```bash
+pnpm run dev
+```
+
+5. Build for production
+
+```bash
+pnpm build
 ```
