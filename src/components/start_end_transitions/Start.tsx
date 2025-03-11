@@ -53,7 +53,7 @@ const Start = ({
                     }}
                 >
                     <Logo
-                        className="w-40 h-40 md:w-24 md:h-24 text-black"
+                        className="w-24 h-24 text-black"
                         fontSize="24"
                     />
                 </motion.div>
