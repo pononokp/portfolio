@@ -112,7 +112,7 @@ const Timeline = () => {
                     icon={javaIcon}
                     intersectionObserverProps={{
                         onChange: handleIntersectionChange,
-                        threshold: 0.5, // Element must be at least 10% visible to trigger
+                        threshold: 0.3, // Element must be at least 30% visible to trigger
                     }}
                 >
                     <h3 className="vertical-timeline-element-title">
@@ -162,7 +162,7 @@ const Timeline = () => {
                     icon={pythonIcon}
                     intersectionObserverProps={{
                         onChange: handleIntersectionChange,
-                        threshold: 0.5, // Element must be at least 10% visible to trigger
+                        threshold: 0.3, // Element must be at least 30% visible to trigger
                     }}
                 >
                     <h3 className="vertical-timeline-element-title">

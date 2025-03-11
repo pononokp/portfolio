@@ -18,6 +18,7 @@ module.exports = {
                 serif: ['var(--font-serif)', 'cursive'],
             },
             screens: {
+                h820: { raw: '(min-height: 820px)' }, // Custom breakpoint for height
                 'max-1210': { max: '1210px' },
                 'max-1030': { max: '1030px' }, // Custom breakpoint for below 1030px
                 'max-980': { max: '980px' }, // Custom breakpoint for below 980px

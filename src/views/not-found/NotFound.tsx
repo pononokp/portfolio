@@ -49,8 +49,10 @@ const NotFound = () => (
                         Back to Mission Control
                     </div>
                 </Link>
+                <div className="items-center justify-center h820:absolute h820:bottom-5">
+                    <Footer />
+                </div>
             </div>
-            <Footer />
         </div>
     </div>
 );
