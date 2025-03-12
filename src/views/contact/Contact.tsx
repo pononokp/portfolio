@@ -6,7 +6,7 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className="min-h-100vh relative flex flex-col z-10 gap-10 justify-center py-24 max-md:py-16 mt-10"
+            className="min-h-100vh relative flex flex-col z-10 gap-10 justify-center py-24 max-md:py-16 mt-10 mb-10"
         >
             <motion.div
                 className="container flex flex-col gap-20"
