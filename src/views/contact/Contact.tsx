@@ -6,10 +6,10 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className="min-h-50vh relative flex flex-col z-10 gap-10 justify-center py-24 max-md:py-16"
+            className="min-h-100vh relative flex flex-col z-10 gap-10 justify-center py-24 max-md:py-16 mt-10"
         >
             <motion.div
-                className="container flex flex-col gap-10"
+                className="container flex flex-col gap-20"
                 initial={{ y: 50, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
