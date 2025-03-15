@@ -44,7 +44,6 @@ const NavList: React.FC<NavListProps> = ({
                         <Link
                             to={section}
                             spy={true}
-                            hashSpy={true}
                             smooth={true}
                             duration={700}
                             isDynamic={true}
