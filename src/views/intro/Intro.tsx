@@ -103,13 +103,14 @@ const Intro = () => {
                         transition={{ duration: 0.5, delay: 0.3 }}
                     >
                         A fifth-year software engineering student passionate
-                        about software creation, innovation, and game
-                        development. With a strong focus on problem-solving, I
-                        work with modern tech stacks like ReactJS, Node.js, and
-                        various cloud services to build impactful,
-                        high-performance tools. I bring creativity and attention
-                        to detail in every project, ensuring seamless and
-                        engaging user experiences.
+                        about software creation, innovation, game development,
+                        and AI integration. I love building and creating
+                        software, constantly exploring new ways to solve
+                        problems with modern tech stacks like ReactJS, Node.js,
+                        and various cloud services. With a creative mindset and
+                        keen attention to detail, I craft high-performance,
+                        impactful tools that deliver seamless and engaging user
+                        experiences.
                     </motion.p>
                 </div>
                 <motion.div
