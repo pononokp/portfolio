@@ -13,6 +13,7 @@ const ProjectOne = () => {
         'Numpy',
         'Scikit-learn',
         'Github',
+        'Machine Learning',
     ];
     const adrlTechBadges = adrlTech.map((technology, i) => {
         return (
@@ -96,8 +97,9 @@ const ProjectOne = () => {
                         </a>
                         , is a powerful tool that helps researchers and
                         engineers test and compare different material
-                        constitutive models, including those powered by machine
-                        learning. It predicts mechanical properties and stress
+                        constitutive models, including those powered by{' '}
+                        <span className="text-accent">machine learning</span>.
+                        It predicts mechanical properties and stress
                         distributions in alloys, offering valuable insights for
                         alloy design and material testing. By combining
                         computational and AI methods, SimuMat makes data-driven

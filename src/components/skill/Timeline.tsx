@@ -39,6 +39,7 @@ const Timeline = () => {
         'Numpy',
         'Scikit-learn',
         'Github',
+        'Machine Learning',
     ];
     const gvTech = [
         'Java',

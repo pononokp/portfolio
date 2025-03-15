@@ -13,6 +13,7 @@ const ProjectThree = () => {
         'REST',
         'Docker',
         'Firebase',
+        'AI/LLM',
     ];
     const fun2lTechBadges = fun2lTech.map((technology, i) => {
         return (
@@ -80,10 +81,11 @@ const ProjectThree = () => {
                         the process more enjoyable. By turning time management
                         into a fun and interactive experience, the app
                         encourages students to stay organized and motivated.
-                        With personalized positive reinforcement messages and a
-                        user-friendly interface, Fun2Learn makes it easier to
-                        manage deadlines, reduce stress, and boost overall
-                        productivity.
+                        With personalized{' '}
+                        <span className="text-accent">AI/LLM</span> positive
+                        reinforcement messages and a user-friendly interface,
+                        Fun2Learn makes it easier to manage deadlines, reduce
+                        stress, and boost overall productivity.
                     </p>
                     <div className="flex flex-wrap gap-2 mt-2">
                         {fun2lTechBadges}
