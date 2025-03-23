@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
 import Logo from '../logo';
 import { useEffect } from 'react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const Start = ({
     setDisappear,
@@ -25,16 +26,19 @@ const Start = ({
                 animate={{
                     y: '-100vh',
                 }}
-                transition={{ duration: 1.5, ease: 'easeInOut', delay: 2 }}
+                transition={{
+                    duration: 1.5,
+                    ease: [0.8, 0.1, 0.1, 1],
+                    delay: 2,
+                }}
             >
                 <span className="font-sans text-black text-6xl h-16">
-                    <Typewriter
-                        words={['WELCOME']}
-                        loop={1} // Set loop to false to type once
-                        cursor
-                        cursorStyle="_"
-                        typeSpeed={200} // Speed of typing
-                        deleteSpeed={50} // Speed of deleting (if any)
+                    <DotLottieReact
+                        src="https://lottie.host/f5a80cba-0096-486b-8156-510ac3952e53/YCU1D805tZ.lottie"
+                        loop={false}
+                        autoplay
+                        className="object-contain sm:w-[1000px] w-[600px] h-full"
+                        speed={1.5}
                     />
                 </span>
                 <motion.div
