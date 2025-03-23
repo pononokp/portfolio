@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Typewriter } from 'react-simple-typewriter';
 import Logo from '../logo';
 import { useEffect } from 'react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
